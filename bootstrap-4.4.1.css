@@ -83,6 +83,12 @@ p {
   margin-bottom: 1rem;
 }
 
+pGray {
+  margin-top: 0;
+  margin-bottom: 1rem;
+	color: grey;
+}
+
 abbr[title],
 abbr[data-original-title] {
   text-decoration: underline;
