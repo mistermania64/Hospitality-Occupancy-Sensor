@@ -42,6 +42,7 @@
 }
 
 html {
+	/*height: 100%;*/
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -61,6 +62,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+  /* min-height: 100%;*/
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -83,10 +85,32 @@ p {
   margin-bottom: 1rem;
 }
 
-pGray {
-  margin-top: 0;
-  margin-bottom: 1rem;
-	color: grey;
+.imgbox
+{
+	display: grid;
+	height: 100%;
+}
+
+.center-fit
+{
+	max-width: 100%;
+	max-height: 100vh;
+	margin: auto;
+}
+
+.gray
+{
+	color: gray;
+}
+
+.darkblue
+{
+	color: darkblue
+}
+
+.navyblue
+{
+	color: navy
 }
 
 abbr[title],
