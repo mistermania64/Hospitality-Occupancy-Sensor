@@ -18,7 +18,7 @@ Dear Luis Garcia and and rest of Corserva/EntryReady,
 
 You may find the assembly instructions on both the software and hardware sides of the occupancy sensor project you have sponsored below. We may add more sections and information about what this document contains as we proceed further into writing.
 
-You would have noticed already that some text (including this) is highlighted. This is the highlighting system that was used previously for the final report written last December and will be used in other documentation for this project until said documents are complete. Feel free to add your own highlighting if something needs to be brought to attention and add a comment if necessary.
+This README does not contain the software engineering notes as I do not have the knowledge to add highlighting and comments to this document if such an ability exists. I'll leave my notes and highlighting to the Google Docs documentation, which I am also editing as well.
 
 We’ll also include a disclaimer about how Corserva plans to use the sensors with a server instead of a Raspberry Pi which is what we have used for this project. We’ll add some heartfelt letter about how it was an honor to work for you on our Senior Design project here, but that’ll be later.
 
@@ -49,6 +49,10 @@ Jack Edwards
 -- 2.1.3 - Home Assistant Onboarding
 
 2.2 - ESPHome & MMWave Code
+
+-- 2.2.1 - ESPHome Environment
+
+-- 2.2.2 - Installing MMWave Code
 
 3. Website Connection Setup
 
@@ -143,7 +147,39 @@ After installing and accessing the Home Assistant operation system as described 
 
 
 ## 2.2 - ESPHome & MMWave Code
+This section covers how to install ESPHome and set up the MMWave code.
 
+### 2.2.1 - ESPHome Environment
+The following steps were performed to start the ESPHome environment:
+1. Go to the following link and enter the webpage used in 2.1.2, step 10, then click on “Save”: https://my.home-assistant.io/redirect/supervisor_addon/?addon=5c53de3b_esphome&repository_url=https%3A%2F%2Fgithub.com%2Fesphome%2Fhome-assistant-addon
+By default, homeassistant.local:8123 is filled, but use http://X.X.X.X:8123 instead if that is what was used.
+
+2. Wait for ESPHome to be installed (it will take a while), then click on “Start” then “Open Web UI”. If you encounter a “502: Bad Gateway” error, then ESPHome is still starting up, so refresh the page later.
+
+3. Proceed through the installation wizard to connect the ESP32 with Home Assistant.
+
+The installation will require an ethernet cable connected from the ESP32 to the computer for the initial connection. Further connections can be made using WiFi.
+
+### 2.2.2 - Installing MMWave Code
+
+The following steps detail how to install the MMWave code after configuring an ESPHome environment.
+
+1. Clone the following repository from this link to your build environment: https://github.com/igiannakas/mmwave-d1mini
+2. From the repository, download the code zip and unzip the file in your ESPHome build directory.
+3. Open the file named “sensor.yaml” and edit the values to your setup:
+
+“device_name”: The sensor’s device name that must be in all lowercase with spaces represented by hyphens.
+Example: room-201-sensor
+
+“device_name_pretty”: The sensor’s device name that will be shown in Home Assistant. Capital letters and spaces are allowed here.
+Example: Room 201 Sensor
+
+“ssid”: The device’s 2.4 ghz WiFi SSID.
+
+“wifi_password”: The password from the previous SSID.
+
+4. Do not change the variables “uart_tx_pin”, “uart_rx_pin”, and “gpio_pin” unless you are using different pin connections from Section 1.
+5. Deploy the MMWave code from your ESPHome environment.
 
 # 3. Website Connection Setup
 
