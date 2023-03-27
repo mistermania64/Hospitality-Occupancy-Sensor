@@ -466,6 +466,12 @@ h6, .h6 {
   font-size: 1rem;
 }
 
+div {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 footer {
    position: fixed;
    bottom: 0;
@@ -2761,6 +2767,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-info:hover {
+
   color: #fff;
   background-color: #138496;
   border-color: #117a8b;
@@ -6539,6 +6546,7 @@ a.close.disabled {
 
 .carousel-item-prev:not(.carousel-item-right),
 .active.carousel-item-left {
+
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
 }

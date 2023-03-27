@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://d3js.org/d3.v7.min.js"></script>
-    <title>Hospitality Occupancy Sensor</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Hospitality Occupancy Sensor Website</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
@@ -19,7 +19,7 @@
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
              </li>
              <li class="nav-item">
                 <a class="nav-link" href="aboutUs.html">About</a>
@@ -46,29 +46,61 @@
 		<br>
 	   <h1 class="display-5 text-center" style = "color: #35C4EC">Main Building&nbsp;</h1>
 	  
-    <!--</div>-->
-    <!--<div class="container">
-       <div class="imgbox" > </div>
-       <div class="imgbox" > 
-	   		<img src="images/floorBarcharts.svg" class="center-fit" alt=""/> 
-		</div>
-    </div>-->
-	  <input type="search" placeholder="Enter Floor...">
-	  <h5 class="col-xl-3">Current Occupants:  <p id ="occupantsText"></p></h5>
+<div>
+  <canvas id="myChart" height="400px" width="400px"></canvas>
+</div>
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: [
+		  	   'Occupied', 
+			   'Vacant'
+			  ],
+		
+      datasets: [{
+        label: 'Floor 1',
+        data: [75, 150],
+		backgroundColor: [
+			'rgb(53,196,236)',
+			'rgb(37,85,119)'
+		]
+      }]
+			
+	}
+  });
+</script>
 	  
-	  <!--DONUT CHART REMNANTS-->
-	  <!--<div class ="container">
-		  <div class = "row">
-			  <div class = "col-sm-6" id = "pieChart">
-				<div id = "pieText" class = "col-sm-6 text-container">
-					<h1 id = "segmentTitle">Select Segment</h1>
-					<p id = "segmentText">Lots of text...</p>
-			    </div>
-		      </div>
-		  </div>
-	  </div>-->
+	  <br>
+	  <br>
+	  <div>
+		  <h4 class="display-5 text-center" style = "color: #35C4EC">Current Occupants:</h4> 
+		  
+		  <h4 class="display-5 text-center" style = "color: #255577">225</h4>
+	  </div>
+	 
+	  <h1>Users:</h1>
+	  <ul></ul>
 	  
-	<footer>
+	  <script>
+		  //Ping API
+		  fetch('https://occupancy-sensor-test.free.beeceptor.com/employees')
+		  .then(res => {
+			  res.json();
+		  })
+		  .then(data => {
+			  data.forEach(user => {
+				const markup = `<li>${user.name}</li>`;
+				  
+				 document.querySelector('ul').insertAdjacentHTML('beforeend', markup)
+			});
+		  })
+		  .catch(error => console.log(error));
+	  </script>
+	  
+	  <footer>
 	<div class="row">
           <div class="text-center col-lg-6 offset-lg-3">
              <h5 class="gray">&copy; 2022 Corserva, Inc. &nbsp;All Rights Reserved.</h5>
@@ -77,8 +109,7 @@
 	</footer>
 	  
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-    <script src="js/jquery-3.4.1.min.js"></script>
-	  <script src="https://d3js.org/d3.v7.min.js"></script>
+	  <script src="js/jquery-3.4.1.min.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed --> 
     <script src="js/popper.min.js"></script>

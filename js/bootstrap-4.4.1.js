@@ -3511,6 +3511,7 @@
     // Public
     _proto.enable = function enable() 
 {
+
       this._isEnabled = true;
     };
 
