@@ -56,7 +56,27 @@ function pingURL()
       throw new Error('Network response was not ok');
     }
     return response.json();
+    //document.getElementById('jsonResponseField').value = response.json();
   })
   .then(data => console.log(data))
   .catch(error => console.error('Error:', error));
+}
+
+function displayJSONResponse(jsonString)
+{
+	//var jsonObj = JSON.parse(jsonString); //Parse JSON String into object
+	var table = document.createElement("table"); // Create a table element
+
+	// Create table rows and cells to display the JSON data
+      for (var key in jsonString) {
+        var row = table.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = key;
+        cell2.innerHTML = jsonString[key];
+      }
+      
+      document.getElementById("json-table").appendChild(table); // Add the table to the HTML page
+
+	document.getElementById('jsonResponseField').value = jsonString;
 }
