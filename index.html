@@ -121,27 +121,44 @@
 		  <button class = "float-sm-left" onClick="removeVacant(1)">Remove Vacant</button>
 	  </div>
 		  
-	  <div>
-	  	<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlVacantLabel">Vacant:</h4> 
-		  
-		  <h4 class="display-5 text-center" style = "color: #255577" id="ttlVacantText">Err</h4>
+	  <div class = "flexContainer" id = "labelRow">
 
-		  <h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlOccupiedLabel">Occupied:</h4> 
+	  	<div class="element">
+	  		<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlVacantLabel">Vacant:</h4>
+	  	</div> 
 		  
-		  <h4 class="display-5 text-center" style = "color: #255577" id="ttlOccupiedText">Err</h4>
 
-		  <h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlOccupantsLabel">Current Occupants:</h4> 
+		  <div class="element">
+		  	<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlOccupiedLabel">Occupied:</h4>
+		  </div> 
 		  
-		  <h4 class="display-5 text-center" style = "color: #255577" id="ttlOccupantsText">Err</h4>
+
+		  <div class="element">
+		  	<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlOccupantsLabel">Current Occupants:</h4>
+		  </div> 
+
+	  </div>
+
+	  <div class = "flexContainer" id = "numbersRow">
+	  	
+	  	<div class="element">
+		  	<h4 class="display-5 text-center" style = "color: #255577" id="ttlVacantText">Loading...</h4>
+		  </div>
+
+			<div class="element">
+		  	<h4 class="display-5 text-center" style = "color: #255577" id="ttlOccupiedText">Loading...</h4>
+		  </div>
+
+			<div class="element">
+		  	<h4 class="display-5 text-center" style = "color: #255577" id="ttlOccupantsText">Loading...</h4>
+		  </div>
+
 	  </div>
 		 
-	  <!--<h3>Users:</h3>
-	  <ul></ul>-->
-	  
 	  <div>
-	  <label for="url">
+	  <label for="urlInput">
 	  	Enter the URL you want to ping:</label><br>
-	  	<input type = "text" id="url" name="url" style="margin: 20px;"><br>
+	  	<input type = "text" id="urlInput" name="urlInput" style="width: 300px; height: 50px; margin: 25px;">
 	  </div>
 
 	  <div class="container">
@@ -149,9 +166,6 @@
 	  			<button onClick="pingURL()">Submit</button>
 				</div>
 	  </div>
-
-	  <input type="button" value="Submit" onclick="pingURL()">
-		 
 	  
 	  <!-- API Pinging -->
 	  <script>
@@ -181,11 +195,13 @@
 
 
 		<footer>
-		<div class="row">
-	          <div class="text-center col-lg-6 offset-lg-3">
-	             <h5 class="gray">&copy; 2022 Corserva, Inc. &nbsp;All Rights Reserved.</h5>
-	          </div>
-	       </div>
+
+			<div class="row">
+	      <div class="text-center col-lg-6 offset-lg-3">
+	      	<h5 class="gray">&copy; 2022 Corserva, Inc. &nbsp;All Rights Reserved.</h5>
+	      </div>
+	    </div>
+
 		</footer>
 
   </body>
