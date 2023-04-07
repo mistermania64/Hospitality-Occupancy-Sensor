@@ -466,6 +466,12 @@ h6, .h6 {
   font-size: 1rem;
 }
 
+.submit
+{
+	height: 200px;
+	width: 200px;
+}
+
 div {
   display: table;
   margin-right: auto;
