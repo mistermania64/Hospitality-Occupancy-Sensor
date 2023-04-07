@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	  <script src="js/javascriptFunctions.js" type="text/javascript"></script>
-	  <script src="js/popper.min.js" type="text/javascript"></script>
-	  <script src="js/bootstrap-4.4.1.js" type="text/javascript"></script>
 		<script src ="js/pingURL.js" type="text/javascript"></script>
-	  <script src="js/jquery.min.js" type="text/javascript"></script>
 		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
     <title>Hospitality Occupancy Sensor Website</title>
 
@@ -85,43 +82,23 @@
 			}
 		  });
 		</script>
-	  
-		<!-- <script>
-			var occupied, vacant;
-			occupied = 100;
-			vacant = 150;
-			
-			function addOccupied()
-			{
-				occupied += 1;
-				myChart.data.datasets[0].data[0] += 1;
-				console.log(occupied);
-				myChart.update();
-			}
-
-			function addVacant()
-			{
-				vacant += 1;
-				myChart.data.datasets[0].data[1] += 1;
-				console.log(vacant);
-				myChart.update();
-			}
-		</script> -->
-
-	  
+	    
 	  <br>
 	  <br>
+
 	  <div>
 		  <button class = "float-sm-left" onClick="addOccupied(1)">Add Occupied</button>
 		  <button class = "float-sm-left" onClick="removeOccupied(1)">Remove Occupied</button>
 		</div>
+
 		<br>
+
 		<div>
 		  <button class = "float-sm-left" onClick="addVacant(1)">Add Vacant</button>
 		  <button class = "float-sm-left" onClick="removeVacant(1)">Remove Vacant</button>
 	  </div>
 		  
-	  <div class = "flexContainer" id = "labelRow">
+	  <div class = "flexContainer" id = "labelRow" style = "margin: 10px;">
 
 	  	<div class="element">
 	  		<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlVacantLabel">Vacant:</h4>
@@ -203,6 +180,11 @@
 	    </div>
 
 		</footer>
+
+		<!-- Optional Javascript -->
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+	  <script src="js/popper.min.js" type="text/javascript"></script>
+	  <script src="js/bootstrap-4.4.1.js" type="text/javascript"></script>
 
   </body>
 	
