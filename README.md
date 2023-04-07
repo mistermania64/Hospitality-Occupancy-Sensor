@@ -30,31 +30,31 @@ Jack Edwards
 
 # Sections List
 
-1. Physical Assembly
+1 - Physical Assembly
 
-1.1 - Materials List
+-- 1.1 - Materials List
 
-1.2 - Wiring
+-- 1.2 - Wiring
 
-1.3 - Assembly Instructions
+-- 1.3 - Assembly Instructions
 
-2. Software Assembly
+2 - Software Assembly
 
-2.1 - Home Assistant
+-- 2.1 - Home Assistant
 
--- 2.1.1 - Home Assistant Materials
++++ 2.1.1 - Home Assistant Materials
 	
--- 2.1.2 - Installing Home Assistant Operating System
++++ 2.1.2 - Installing Home Assistant Operating System
 
--- 2.1.3 - Home Assistant Onboarding
++++ 2.1.3 - Home Assistant Onboarding
 
-2.2 - ESPHome & MMWave Code
+-- 2.2 - ESPHome & MMWave Code
 
--- 2.2.1 - ESPHome Environment
++++ 2.2.1 - ESPHome Environment
 
--- 2.2.2 - Installing MMWave Code
++++ 2.2.2 - Installing MMWave Code
 
-3. Website Connection Setup
+3 - Website Connection Setup
 
 
 ## 1. Physical Assembly
