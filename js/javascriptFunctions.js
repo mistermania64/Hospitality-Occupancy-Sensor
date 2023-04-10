@@ -179,6 +179,14 @@ function setVacant(newVacant)
 	}
 }
 
+function autoResize() 
+{
+  var textarea = document.getElementById("jsonResponseField");
+  textarea.style.height = "auto";
+  textarea.style.height = textarea.scrollHeight + "px";
+  console.log("Auto Resize called");
+}
+
 function searchFloor(floorNum)
 {
 	let input = document.getElementById('floorSearch').value

@@ -58,25 +58,30 @@ function pingURL()
     return response.json();
     //document.getElementById('jsonResponseField').value = response.json();
   })
-  .then(data => console.log(data))
+  .then(data => {
+  	console.log(data);
+	const json = JSON.stringify(data, null, 2); // Convert the data to a nicely formatted JSON string)
+	console.log(json);
+
+	document.getElementById('jsonResponseField').value = "JSON Response:\n" + json;
+	})
+
   .catch(error => console.error('Error:', error));
 }
 
 function displayJSONResponse(jsonString)
 {
-	//var jsonObj = JSON.parse(jsonString); //Parse JSON String into object
-	var table = document.createElement("table"); // Create a table element
+	// var jsonObj = JSON.parse(jsonString); //Parse JSON String into object
+	// var table = document.createElement("table"); // Create a table element
 
-	// Create table rows and cells to display the JSON data
-      for (var key in jsonString) {
-        var row = table.insertRow();
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        cell1.innerHTML = key;
-        cell2.innerHTML = jsonString[key];
-      }
+	// // Create table rows and cells to display the JSON data
+ //      for (var key in jsonString) {
+ //        var row = table.insertRow();
+ //        var cell1 = row.insertCell(0);
+ //        var cell2 = row.insertCell(1);
+ //        cell1.innerHTML = key;
+ //        cell2.innerHTML = jsonString[key];
+ //      }
       
-      document.getElementById("json-table").appendChild(table); // Add the table to the HTML page
-
-	document.getElementById('jsonResponseField').value = jsonString;
+ //      document.getElementById("json-table").appendChild(table); // Add the table to the HTML page
 }
