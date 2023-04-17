@@ -1,0 +1,23 @@
+{
+  "name": "corserva-occupancy-sensor-website",
+  "version": "1.0.0",
+  "description": "**Prepared For Corserva**",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mistermania64/Hospitality-Occupancy-Sensor.git"
+  },
+  "author": "mistermania64",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "bugs": {
+    "url": "https://github.com/mistermania64/Hospitality-Occupancy-Sensor/issues"
+  },
+  "homepage": "index.html",
+  "keywords": []
+}
