@@ -48,32 +48,47 @@ function getOccupants()
 
 function setOccupants(newOccupantVal)
 {
-	if (newOccupantVal < ttlOccupants)
-	{
-		setOccupied(0); //Zero out occupied
-		setVacant(newOccupantVal); //Assign remainder to vacant
-		ttlOccupants = newOccupantVal; //Update ttlOccupants
-	}
 
-	else
-	{
-		var toBeAssigned = Math.abs(ttlOccupants - newOccupantVal); //Extra occupants must be assigned to either vacant or occupied
-		var sortingHat = Math.floor(Math.random() * 2);
+	if (!Number.isInteger(newOccupantVal))
+		console.log("Please enter an integer value.")
 
-		if(sortingHat == 0)
-			vacant += toBeAssigned;
+  else
+  {
 
+	  if (newOccupantVal < ttlOccupants)
+		{
+			ttlOccupants = newOccupantVal; //Update ttlOccupants
+			addOccupied((-getOccupied())); //Zero out occupied
+			addVacant(((-getVacant()))); //Zero out Vacant
+			addVacant(newOccupantVal); //Assign remainder to vacant
+		}
+
+		else if (newOccupantVal == ttlOccupants)
+			console.log("Value is unchanged.");
+		
 		else
-			occupied += toBeAssigned;
+		{
+			var toBeAssigned = Math.abs(newOccupantVal - ttlOccupants); //Extra occupants must be assigned to either vacant or occupied
+			var sortingHat = Math.floor(Math.random() * 2);
 
-		ttlOccupants = newOccupantVal;
-	}
+			if(sortingHat == 0)
+				//vacant += toBeAssigned;
+				addVacant(toBeAssigned);
 
-	//Update Label
-	updateLabels();
 
-	//Update Chart
-	myChart.update();
+			else
+				//occupied += toBeAssigned;
+				addOccupied(toBeAssigned);
+
+			//ttlOccupants = newOccupantVal;
+
+			addOccupants(toBeAssigned);
+
+
+		}
+
+  }
+
 }
 
 
