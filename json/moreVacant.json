@@ -1,5 +1,9 @@
 {
-	"ttlOccupants": 300,
-	"occupied": 15,
-	"vacant": 285
+	"more-vacant": [
+	  {
+		"ttlOccupants": "300",
+		"occupied": "15",
+		"vacant": "285"
+	  }
+	]
 }
