@@ -21,6 +21,7 @@
 .JSONButton
 {
   display: inline-block;
+  margin: auto;
 }
 
 
@@ -29,9 +30,26 @@
 	display: flex;
 }
 
+.flexChild
+{
+  flex:  1;
+}
+
+.flexChild:first-child
+{
+  margin-right: 20px;
+}
+
 .element
 {
   width: 100px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.center
+{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }

@@ -69,13 +69,70 @@
 	  <!--<div class="jumbotron jumbotron-fluid text-center">-->
 	     <h1 class="display-4 text-center">Welcome, John Doe&nbsp;</h1>
 		<br>
-	   <h1 class="display-5 text-center" style = "color: #35C4EC">Main Building&nbsp;</h1>
-		  
-		<div>
-	  	<canvas id="myChart" height="400px" width="400px"></canvas>
-	  	<button id = "JSON1" class="JSONButton" onclick="parseLocalFile('json/moreOccupied.json')">JSON 1</button>
-	  	<button id = "JSON2" class="JSONButton" onclick="parseLocalFile('json/moreVacant.json')">JSON 2</button>
-	  	<button id = "JSON3" class="JSONButton" onclick="parseLocalFile('json/equalSplit.json')">JSON 3</button>
+
+		<br>
+
+	<div class="flexContainer">
+
+		<div class = "flexChild">
+
+			<div class="element">
+				<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlVacantLabel">Vacant:</h4>
+		   	<h4 class="display-5 text-center" style = "color: #255577" id="ttlVacantText">Loading...</h4>
+		   </div>
+
+		   <div class="element">
+				<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlOccupiedLabel">Occupied:</h4>
+				<h4 class="display-5 text-center" style = "color: #255577" id="ttlOccupiedText">Loading...</h4>
+			</div>
+
+			<div class="element">
+				<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlOccupantsLabel">Current Occupants:</h4>
+				<h4 class="display-5 text-center" style = "color: #255577" id="ttlOccupantsText">Loading...</h4>
+			</div>
+
+			<!-- <div class="element">
+				<div>
+				  <button class = "float-sm-left" onClick="addOccupied(1)">Add Occupied</button>
+				  <button class = "float-sm-left" onClick="removeOccupied(1)">Remove Occupied</button>
+				</div>
+
+				<div class="element">
+				  <button class = "float-sm-left" onClick="addVacant(1)">Add Vacant</button>
+				  <button class = "float-sm-left" onClick="removeVacant(1)">Remove Vacant</button>
+	  			</div>
+	  		</div> -->
+
+
+		</div>
+
+		<div class = flexChild id = "donutChart">
+			<div>
+				<h1 class="display-5 text-center" style = "color: #35C4EC">Main Building&nbsp;</h1>
+	  			<canvas id="myChart" height="400px" width="400px"></canvas>
+	  		</div>
+	   </div>
+
+	   <div class = flexChild id = "JSONResponseArea">
+	   	<div>
+	   		<h4 style = "color: #35C4EC" id="ttlVacantLabel">JSON Response Area:</h4>
+	  		 	<textarea name = "jsonResponseField", id = "jsonResponseField", oninput="autoResize()", value = "">JSON Response:</textarea>	
+	   		<div id = "json-table"></div>
+	 		</div>
+	   </div>
+
+	</div>
+	  	
+	  	<!-- Line Breaks -->
+	  	<br><br>
+
+	  	
+	  		
+
+	  	<div>
+	  	<button id = "JSON1" class="float-sm-left" onclick="parseLocalFile('json/moreOccupied.json')">JSON 1</button>
+	  	<button id = "JSON2" class="float-sm-left" onclick="parseLocalFile('json/moreVacant.json')">JSON 2</button>
+	  	<button id = "JSON3" class="float-sm-left" onclick="parseLocalFile('json/equalSplit.json')">JSON 3</button>
 		</div>
 	  
 	  
@@ -101,7 +158,7 @@
 		  });
 		</script>
 	    
-	  <br>
+	  <!-- <br> -->
 	  <br>
 
 	  <div>
@@ -115,8 +172,8 @@
 		  <button class = "float-sm-left" onClick="addVacant(1)">Add Vacant</button>
 		  <button class = "float-sm-left" onClick="removeVacant(1)">Remove Vacant</button>
 	  </div>
-
-	  <div class = "flexContainer" id = "labelRow" style = "margin: 10px;">
+ 
+	  <!-- <div class = "flexContainer" id = "labelRow" style = "margin: 10px;">
 
 	  	<div class="element">
 	  		<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlVacantLabel">Vacant:</h4>
@@ -132,9 +189,9 @@
 		  	<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlOccupantsLabel">Current Occupants:</h4>
 		  </div> 
 
-	  </div>
+	  </div> -->
 
-	  <div class = "flexContainer" id = "numbersRow">
+	  <!-- <div class = "flexContainer" id = "numbersRow">
 	  	
 	  	<div class="element">
 		  	<h4 class="display-5 text-center" style = "color: #255577" id="ttlVacantText">Loading...</h4>
@@ -148,13 +205,27 @@
 		  	<h4 class="display-5 text-center" style = "color: #255577" id="ttlOccupantsText">Loading...</h4>
 		  </div>
 
-	  </div>
+	  </div> -->
 		 
-		<div>
+		<!-- <div>
 	   <textarea name = "jsonResponseField", id = "jsonResponseField", oninput="autoResize()", value = "">JSON Response:</textarea>	
 	   <div id = "json-table"></div>
+	  </div> -->
+
+
+	  <div>
+	  <label for="urlInput">
+	  	Enter the URL you want to ping:</label>
+	  	<input type = "text" id="urlInput" name="urlInput" style="width: 300px; height: 30px; margin: 25px;">
 	  </div>
 
+		<div class="element">
+	  			<button onClick="pingURL()">Submit</button>
+		</div>
+
+
+		<br><br><br>
+		
 		 <div>
 		 	<p>URLs to Test</p>
 		 	<p>https://occupancy-sensor-test.free.beeceptor.com</p>
@@ -166,17 +237,7 @@
 		 	<p>http://localhost:3000/equal-split</p>
 		 </div>
 
-	  <div>
-	  <label for="urlInput">
-	  	Enter the URL you want to ping:</label><br>
-	  	<input type = "text" id="urlInput" name="urlInput" style="width: 300px; height: 50px; margin: 25px;">
-	  </div>
 
-	  <div class="container">
-				<div class="center">
-	  			<button onClick="pingURL()">Submit</button>
-				</div>
-	  </div>
 	  
 	  <!-- API Pinging -->
 	  <script>
