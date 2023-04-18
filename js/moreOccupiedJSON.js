@@ -14,7 +14,7 @@ function moreOccupiedJSON()
 	setOccupied(occupied);
 	setVacant(vacant);
 
-	const json = JSON.stringify(jsonObj, null, 2); // Convert the data to a nicely formatted JSON string)
+	const json = JSON.stringify(obj, null, 2); // Convert the data to a nicely formatted JSON string)
 	console.log(json);
 
 	document.getElementById('jsonResponseField').value = "JSON Response:\n" + json;
