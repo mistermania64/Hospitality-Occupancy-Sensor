@@ -12,9 +12,9 @@ function parseLocalFile(filename)
 	const jsonObj = JSON.parse(jsonString);
 
 	//Extract specific values 
-	var occupied = obj.occupied;
-	var vacant = obj.vacant;
-	var occupants = obj.occupants;
+	var occupied = jsonObj.occupied;
+	var vacant = jsonObj.vacant;
+	var occupants = jsonObj.occupants;
 
 	//Update chart
 	setOccupants(occupants);
@@ -22,7 +22,7 @@ function parseLocalFile(filename)
 	setVacant(vacant);
 
 
-	document.getElementById('jsonResponseField').value = "JSON Response:\n" + json;
+	document.getElementById('jsonResponseField').value = "JSON Response:\n" + jsonString;
 	})
 
   .catch(error => console.error('Error:', error));
