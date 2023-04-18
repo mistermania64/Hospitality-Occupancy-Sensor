@@ -1,9 +1,9 @@
 {
 	"more-occupied": [
 	  {
-		"ttlOccupants": "300",
-		"occupied": "275",
-		"vacant": "25"
+		"ttlOccupants": 300,
+		"occupied": 275,
+		"vacant": 25
 	  }
-  ],
+  ]
 }
