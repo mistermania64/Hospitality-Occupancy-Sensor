@@ -82,7 +82,7 @@ function setOccupants(newOccupantVal)
 
 			//ttlOccupants = newOccupantVal;
 
-			addOccupants(toBeAssigned);
+			//addOccupants(toBeAssigned);
 
 
 		}

@@ -14,7 +14,7 @@ function parseLocalFile(filename)
 	//Extract specific values 
 	var occupied = jsonObj.occupied;
 	var vacant = jsonObj.vacant;
-	var occupants = jsonObj.occupants;
+	var occupants = jsonObj.ttlOccupants;
 
 	//Update chart
 	setOccupants(occupants);
