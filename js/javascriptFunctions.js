@@ -1,11 +1,11 @@
 // JavaScript Document
 
 //Global Variables
-var occupied, vacant, ttlOccupants;
+let occupied, vacant, ttlOccupants;
 
-occupied = 50;
-vacant = 50;
-ttlOccupants = occupied + vacant; //Default 100
+occupied = 150;
+vacant = 150;
+ttlOccupants = 300; //Default 100
 
 function updateLabels()
 {
@@ -138,7 +138,7 @@ function setOccupied(newOccupied)
 		//vacant -= newOccupied;
 		myChart.data.datasets[0].data[0] = occupied;
 		myChart.update();
-		updateLabels();
+		// updateLabels();
 	}
 }
 
@@ -165,7 +165,7 @@ function removeVacant(newVacant)
 	console.log(vacant);
 	console.log("ttlOccupants: " + ttlOccupants)
 	myChart.update();
-	updateLabels();
+	// updateLabels();
 }
 
 function getVacant()
@@ -190,7 +190,7 @@ function setVacant(newVacant)
 		//occupied -= newVacant;
 		myChart.data.datasets[0].data[1] = vacant;
 		myChart.update();
-		updateLabels();
+		// updateLabels();
 	}
 }
 
