@@ -12,9 +12,9 @@ function parseLocalFile(filename)
 	const jsonObj = JSON.parse(jsonString);
 
 	//Extract specific values 
-	var occupied = jsonObj.occupied;
-	var vacant = jsonObj.vacant;
-	var occupants = jsonObj.ttlOccupants;
+	var occupied = data.occupied;
+	var vacant = data.vacant;
+	var occupants = data.ttlOccupants;
 
 	//Update chart
 	setOccupants(occupants);
