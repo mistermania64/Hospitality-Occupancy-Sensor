@@ -1,16 +1,16 @@
 function moreOccupiedJSON()
 {
-	var jsonObj = '{"ttlOccupants": 300,"occupied": 275,"vacant": 25}';
+	var jsonObj = '{"ttlRooms": 300,"occupied": 275,"vacant": 25}';
 
-   var obj = JSON.parse(jsonObj);
+    var obj = JSON.parse(jsonObj);
 
 	//Extract specific values 
 	var occupied = obj.occupied;
 	var vacant = obj.vacant;
-	var ttlOccupants = obj.ttlOccupants;
+	var ttlRooms = obj.ttlRooms;
 
 	//Update chart
-	setOccupants(ttlOccupants);
+	setRooms(ttlRooms);
 	setOccupied(occupied);
 	setVacant(vacant);
 

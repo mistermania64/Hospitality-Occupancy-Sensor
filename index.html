@@ -92,8 +92,8 @@
 			</div>
 
 			<div class="element">
-				<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlOccupantsLabel">Current Occupants:</h4>
-				<h4 class="display-5 text-center" style = "color: #255577" id="ttlOccupantsText">Loading...</h4>
+				<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlRoomsLabel">Rooms:</h4>
+				<h4 class="display-5 text-center" style = "color: #255577" id="ttlRoomsText">Loading...</h4>
 			</div>
 
 			<!-- <div class="element">
@@ -169,16 +169,31 @@
 	  <!-- <br> -->
 	  <br>
 
-	  <div>
-		  <button class = "float-sm-left" onClick="addOccupied(1)">Add Occupied</button>
-		  <button class = "float-sm-left" onClick="removeOccupied(1)">Remove Occupied</button>
+	  <!-- <div>
+		  <button class = "float-sm-left" onClick="addOccupiedNew()">Add Occupied</button>
+		  <button class = "float-sm-left" onClick="removeOccupied(1)">Remove Occupied</button> -->
 		<!-- </div>
 
 		<br>
 
 		<div> -->
-		  <button class = "float-sm-left" onClick="addVacant(1)">Add Vacant</button>
+		  <!-- <button class = "float-sm-left" onClick="addVacantNew()">Add Vacant</button>
 		  <button class = "float-sm-left" onClick="removeVacant(1)">Remove Vacant</button>
+	  </div> -->
+
+	  <div>
+		  <button class = "float-sm-left" onClick="makeVacant()">Make Vacant</button>
+		  <button class = "float-sm-left" onClick="makeOccupied()">Make Occupied</button>
+	  </div>
+
+		<!-- </div>
+
+		<br>
+
+		<div> -->
+	 <div>
+		  <button class = "float-sm-left" onClick="addVacantRoom()">Add Vacant Room</button>
+		  <button class = "float-sm-left" onClick="addOccupiedRoom()">Add Occupied Room</button>
 	  </div>
  
 	  <!-- <div class = "flexContainer" id = "labelRow" style = "margin: 10px;">
@@ -194,7 +209,7 @@
 		  
 
 		  <div class="element">
-		  	<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlOccupantsLabel">Current Occupants:</h4>
+		  	<h4 class="display-5 text-center" style = "color: #35C4EC" id="ttlRoomsLabel">Current Rooms:</h4>
 		  </div> 
 
 	  </div> -->
@@ -210,7 +225,7 @@
 		  </div>
 
 			<div class="element">
-		  	<h4 class="display-5 text-center" style = "color: #255577" id="ttlOccupantsText">Loading...</h4>
+		  	<h4 class="display-5 text-center" style = "color: #255577" id="ttlRoomsText">Loading...</h4>
 		  </div>
 
 	  </div> -->
@@ -236,10 +251,10 @@
 		
 		 <div>
 		 	<p>URLs to Test</p>
-		 	<p>https://occupancy-sensor-test.free.beeceptor.com</p>
-		 	<p>https://occupancy-sensor-test.free.beeceptor.com/more-occupied</p>
-		 	<p>https://occupancy-sensor-test.free.beeceptor.com/more-vacant</p>
-		 	<p>https://occupancy-sensor-test.free.beeceptor.com/equal-split</p>
+		 	<p>https://occupancy-sensor-test.proxy.beeceptor.com</p>
+		 	<p>https://occupancy-sensor-test.proxy.beeceptor.com/more-occupied</p>
+		 	<p>https://occupancy-sensor-test.proxy.beeceptor.com/more-vacant</p>
+		 	<p>https://occupancy-sensor-test.proxy.beeceptor.com/equal-split</p>
 		 	<p>http://localhost:3000/more-occupied</p>
 		 	<p>http://localhost:3000/more-vacant</p>
 		 	<p>http://localhost:3000/equal-split</p>

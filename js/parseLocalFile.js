@@ -14,10 +14,10 @@ function parseLocalFile(filename)
 	//Extract specific values 
 	var occupied = data.occupied;
 	var vacant = data.vacant;
-	var occupants = data.ttlOccupants;
+	var rooms = data.ttlRooms;
 
 	//Update chart
-	setOccupants(occupants);
+	setRooms(rooms);
 	setOccupied(occupied);
 	setVacant(vacant);
 

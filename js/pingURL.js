@@ -37,10 +37,10 @@ function pingURL()
     //Extract specific values from Data
     occupied = data.occupied;
     vacant = data.vacant;
-    occupants = data.ttlOccupants;
+    rooms = data.ttlRooms;
 
     //Update chart
-    setOccupants(occupants);
+    setRooms(rooms);
     setOccupied(occupied);
     setVacant(vacant);
 
@@ -62,10 +62,10 @@ function pingURL()
   // //Extract specific values from Data
   // var occupied = globalData.occupied;
   // var vacant = globalData.vacant;
-  // var occupants = globalData.ttlOccupants;
+  // var rooms = globalData.ttlRooms;
 
   // //Update chart
-  // setOccupants(occupants);
+  // setRooms(rooms);
   // setOccupied(occupied);
   // setVacant(vacant);
 
