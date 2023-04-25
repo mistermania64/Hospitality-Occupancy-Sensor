@@ -1,10 +1,8 @@
 {
-	"equal-split": [
-	  {
+	"equal-split": [{
 		"ttlRooms": "300",
 		"occupied": "150",
 		"vacant": "150"
-	  }
-	]
+	}]
 
 }

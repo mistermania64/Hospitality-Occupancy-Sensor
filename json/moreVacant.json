@@ -1,9 +1,7 @@
 {
-	"more-vacant": [
-	  {
+	"more-vacant": [{
 		"ttlRooms": "300",
 		"occupied": "15",
 		"vacant": "285"
-	  }
-	]
+	}]
 }

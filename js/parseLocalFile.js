@@ -5,19 +5,20 @@ function parseLocalFile(filename)
 	.then(data => {
 
 	console.log(data);
+	console.log(response);
+
+	// Parse the returned data into a JSON object
+	const jsonObj = JSON.parse(data);
 
 	//Stringify, log string, and print in textarea
 	const jsonString = JSON.stringify(data, null, 2); // Convert the data to a nicely formatted JSON string)
 	console.log(jsonString);
 	document.getElementById('jsonResponseField').value = "JSON Response:\n" + jsonString;
 
-	// Parse the returned data into a JSON object
-	const jsonObj = JSON.parse(data);
-
 	//Extract specific values from JSON object
-	newOccupied = parseInt(jsonObj.occupied);
-	newVacant = parseInt(jsonObj.vacant);
-	newRooms = parseInt(jsonObj.ttlRooms);
+	newOccupied = parseInt(jsonString.occupied);
+	newVacant = parseInt(jsonString.vacant);
+	newRooms = parseInt(jsonString.ttlRooms);
 
 	//Update chart
 	setRooms(newRooms);
@@ -43,18 +44,18 @@ function parseLocalFile2(filename)
 
 	console.log(data);
 
+	// Parse the returned data into a JSON object
+	const jsonObj = JSON.parse(data);
+
 	//Stringify, log string, and print in textarea
 	const jsonString = JSON.stringify(data, null, 2); // Convert the data to a nicely formatted JSON string)
 	console.log(jsonString);
 	document.getElementById('jsonResponseField').value = "JSON Response:\n" + jsonString;
 
-	// Parse the returned data into a JSON object
-	const jsonObj = JSON.parse(data);
-
 	//Extract specific values from JSON object
-	newOccupied = parseInt(jsonObj.occupied);
-	newVacant = parseInt(jsonObj.vacant);
-	newRooms = parseInt(jsonObj.ttlRooms);
+	newOccupied = parseInt(jsonString.occupied);
+	newVacant = parseInt(jsonString.vacant);
+	newRooms = parseInt(jsonString.ttlRooms);
 
 	//Update chart
 	setRooms(newRooms);
