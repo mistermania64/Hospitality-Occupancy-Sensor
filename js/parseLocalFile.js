@@ -23,9 +23,9 @@ function parseLocalFile(filename)
 	// newVacant = jsonObj.vacant;
 	// newRooms = jsonObj.ttlRooms;
 
-	newOccupied = data.occupied;
-	newVacant = data.vacant;
-	newRooms = data.ttlRooms;
+	newOccupied = parseInt(jsonObj.occupied);
+	newVacant = parseInt(jsonObj.vacant);
+	newRooms = parseInt(jsonObj.ttlRooms);
 
 	//Update chart
 	setRooms(newRooms);
@@ -64,9 +64,9 @@ function parseLocalFile2(filename)
 	// newVacant = parseInt(jsonObj.vacant);
 	// newRooms = parseInt(jsonObj.ttlRooms);
 
-	newOccupied = data.occupied;
-	newVacant = data.vacant;
-	newRooms = data.ttlRooms;
+	newOccupied = jsonObj.occupied;
+	newVacant = jsonObj.vacant;
+	newRooms = jsonObj.ttlRooms;
 
 	//Update chart
 	setRooms(newRooms);
