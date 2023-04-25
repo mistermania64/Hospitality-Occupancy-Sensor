@@ -19,9 +19,13 @@ function parseLocalFile(filename)
 	// newVacant = parseInt(jsonString.vacant);
 	// newRooms = parseInt(jsonString.ttlRooms);
 
-	newOccupied = jsonObj.occupied;
-	newVacant = jsonObj.vacant;
-	newRooms = jsonObj.ttlRooms;
+	// newOccupied = jsonObj.occupied;
+	// newVacant = jsonObj.vacant;
+	// newRooms = jsonObj.ttlRooms;
+
+	newOccupied = data.occupied;
+	newVacant = data.vacant;
+	newRooms = data.ttlRooms;
 
 	//Update chart
 	setRooms(newRooms);
@@ -56,9 +60,13 @@ function parseLocalFile2(filename)
 	const jsonObj = JSON.parse(jsonString);
 
 	//Extract specific values from JSON object
-	newOccupied = parseInt(jsonObj.occupied);
-	newVacant = parseInt(jsonObj.vacant);
-	newRooms = parseInt(jsonObj.ttlRooms);
+	// newOccupied = parseInt(jsonObj.occupied);
+	// newVacant = parseInt(jsonObj.vacant);
+	// newRooms = parseInt(jsonObj.ttlRooms);
+
+	newOccupied = data.occupied;
+	newVacant = data.vacant;
+	newRooms = data.ttlRooms;
 
 	//Update chart
 	setRooms(newRooms);
