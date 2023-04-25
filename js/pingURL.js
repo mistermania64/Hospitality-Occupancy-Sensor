@@ -35,14 +35,17 @@ function pingURL()
     document.getElementById('jsonResponseField').value = "JSON Response:\n" + jsonString; //Print in textarea
 
     //Extract specific values from Data
-    occupied = data.occupied;
-    vacant = data.vacant;
-    rooms = data.ttlRooms;
+    newOccupied = data.occupied;
+    getOccupied();
+    newVacant = data.vacant;
+    getVacant();
+    newRooms = data.ttlRooms;
+    getRooms();
 
     //Update chart
-    setRooms(rooms);
-    setOccupied(occupied);
-    setVacant(vacant);
+    setRooms(newRooms);
+    setOccupied(newOccupied);
+    setVacant(newVacant);
 
     //Update Labels
     updateLabels();

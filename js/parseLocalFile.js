@@ -12,14 +12,14 @@ function parseLocalFile(filename)
 	const jsonObj = JSON.parse(jsonString);
 
 	//Extract specific values 
-	var occupied = data.occupied;
-	var vacant = data.vacant;
-	var rooms = data.ttlRooms;
+	var newOccupied = data.occupied;
+	var newVacant = data.vacant;
+	var newRooms = data.ttlRooms;
 
 	//Update chart
-	setRooms(rooms);
-	setOccupied(occupied);
-	setVacant(vacant);
+	setRooms(newRooms);
+	setOccupied(newOccupied);
+	setVacant(newVacant);
 
 
 	document.getElementById('jsonResponseField').value = "JSON Response:\n" + jsonString;

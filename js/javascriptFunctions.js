@@ -43,7 +43,7 @@ function removeRooms(value)
 function getRooms()
 {
 	return ttlRooms;
-	// alert("Current Occupants: " + document.getElementById('ttlRoomsText').innerHTML);
+	// alert("Current Rooms: " + document.getElementById('ttlRoomsText').innerHTML);
 }
 
 function setRooms(newRoomVal)
@@ -57,28 +57,51 @@ function setRooms(newRoomVal)
 
 	  if (newRoomVal < ttlRooms)
 		{
-			ttlRooms = newRoomVal; //Update ttlRooms
-			addOccupied((-getOccupied())); //Zero out occupied
-			addVacant(((-getVacant()))); //Zero out Vacant
-			addVacant(newRoomVal); //Assign remainder to vacant
+			//Get difference between values
+			var tempSub = ttlRooms - newRoomVal;
+
+			//Subtract difference from occupied, if unable, vacant
+			for (let i = 1; i <= tempSub; i++)
+			{
+				if (occupied > 0)
+					occupied -= 1;
+
+				else if (occupied <= 0 && vacant > 0)
+					vacant -= 1;
+
+				else //NOTE: This shouldn't ever happen
+				{
+					console.log("ERROR: New room value is greater than sum of both categories");
+					break;
+				}
+
+			} // end for loop
+			
+			//setOccupied(0) //Zero out occupied
+			//addVacant(((-getVacant()))); //Zero out Vacant
+			//addVacant(newRoomVal); //Assign remainder to vacant
+			
 		}
 
 		else if (newRoomVal == ttlRooms)
 			console.log("Value is unchanged.");
 		
-		else
+		else //newRoomVal > ttlRooms
 		{
 			var toBeAssigned = Math.abs(newRoomVal - ttlRooms); //Extra occupants must be assigned to either vacant or occupied
 			var sortingHat = Math.floor(Math.random() * 2);
 
-			if(sortingHat == 0)
-				//vacant += toBeAssigned;
-				addVacant(toBeAssigned);
+			for(let i = 1; i <= toBeAssigned; i++)
+			{
+				if(sortingHat == 0)
+					vacant += toBeAssigned;
+					//addVacant(toBeAssigned);
 
 
-			else
-				//occupied += toBeAssigned;
-				addOccupied(toBeAssigned);
+				else
+					occupied += toBeAssigned;
+					//addOccupied(toBeAssigned);
+			}
 
 			//ttlRooms = newRoomVal;
 
@@ -86,6 +109,9 @@ function setRooms(newRoomVal)
 
 
 		}
+
+		ttlRooms = newRoomVal; //Update ttlRooms value
+		//Call UpdateLabels() from calling function
 
   }
 
@@ -145,8 +171,13 @@ function getOccupied()
 
 function setOccupied(newOccupied)
 {
-	if (newOccupied > ttlRooms){
-		console.log("New value cannot be greater than total occupants.");
+	if (!Number.isInteger(newOccupied))
+	{
+		console.log("Please enter an integer value.")
+	}
+
+	else if (newOccupied > ttlRooms){
+		console.log("New value cannot be greater than total rooms.");
 	}
 
 	// if (vacant - newOccupied < 0)
@@ -237,22 +268,21 @@ function getVacant()
 
 function setVacant(newVacant)
 {
-	if (newVacant > ttlRooms){
-		console.log("New value cannot be greater than total occupants.");
+	if (!Number.isInteger(newVacant))
+	{
+		console.log("Please enter an integer value.")
 	}
 
-	// if (occupied - newVacant < 0)
-	// {
-	// 	console.log("Error");
-	// }
+	else if (newVacant > ttlRooms){
+		console.log("New value cannot be greater than total rooms.");
+	}
 
 	else {
 		vacant = newVacant;
-		//occupied -= newVacant;
 		myChart.data.datasets[0].data[1] = vacant;
 		myChart.update();
-		// updateLabels();
 	}
+
 }
 
 function autoResize() 
