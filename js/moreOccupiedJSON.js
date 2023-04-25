@@ -14,6 +14,9 @@ function moreOccupiedJSON()
 	setOccupied(occupied);
 	setVacant(vacant);
 
+	//Update Labels
+	updateLabels();
+
 	const json = JSON.stringify(obj, null, 2); // Convert the data to a nicely formatted JSON string)
 	console.log(json);
 
