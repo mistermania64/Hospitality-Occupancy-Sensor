@@ -1,6 +1,6 @@
 function parseLocalFile(filename)
 {
-   fetch(`${filename}`, {mode: 'cors'})
+   fetch(filename)
 	.then(response => response.json())
 	.then(data => {
 
