@@ -6,7 +6,7 @@
  block. This is messy and should be cleaned up later, but it works for now.
  */
 
-let globalData;
+//let globalData;
 
 function pingURL()
 {
@@ -36,11 +36,8 @@ function pingURL()
 
     //Extract specific values from Data
     newOccupied = data.occupied;
-    getOccupied();
     newVacant = data.vacant;
-    getVacant();
     newRooms = data.ttlRooms;
-    getRooms();
 
     //Update chart
     setRooms(newRooms);
@@ -73,9 +70,4 @@ function pingURL()
   // setVacant(vacant);
 
   // console.log(globalData);
-}
-
-function displayJSONResponse(jsonString)
-{
-	//Maybe use later
 }

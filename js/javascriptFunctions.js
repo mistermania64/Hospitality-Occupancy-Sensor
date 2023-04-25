@@ -52,6 +52,11 @@ function setRooms(newRoomVal)
 	if (!Number.isInteger(newRoomVal))
 		console.log("Please enter an integer value.")
 
+	else if (newRoomVal <= 0)
+	{
+			console.log("Error: Cannot have 0 rooms.");
+	}
+
   else
   {
 
@@ -77,10 +82,6 @@ function setRooms(newRoomVal)
 
 			} // end for loop
 			
-			//setOccupied(0) //Zero out occupied
-			//addVacant(((-getVacant()))); //Zero out Vacant
-			//addVacant(newRoomVal); //Assign remainder to vacant
-			
 		}
 
 		else if (newRoomVal == ttlRooms)
@@ -94,19 +95,14 @@ function setRooms(newRoomVal)
 			for(let i = 1; i <= toBeAssigned; i++)
 			{
 				if(sortingHat == 0)
-					vacant += toBeAssigned;
+					vacant += 1;
 					//addVacant(toBeAssigned);
 
 
 				else
-					occupied += toBeAssigned;
+					occupied += 1;
 					//addOccupied(toBeAssigned);
 			}
-
-			//ttlRooms = newRoomVal;
-
-			//addRooms(toBeAssigned);
-
 
 		}
 
@@ -118,6 +114,25 @@ function setRooms(newRoomVal)
 }
 
 // Occupied Functions
+function addOccupiedRooms(value)
+{
+	if ((ttlRooms + value) <= 0)
+	{
+			console.log("Error: Cannot have 0 rooms.");
+	}
+
+	else
+	{
+			occupied += value;
+			addRooms(value); //ttlRooms += newOccupied
+			myChart.data.datasets[0].data[0] += value;
+
+			myChart.update();
+			updateLabels();
+	}
+
+}
+
 function makeOccupied()
 {
 
@@ -140,30 +155,6 @@ function makeOccupied()
 
 }
 
-// function addOccupied(newOccupied)
-// {
-// 	occupied += newOccupied;
-// 	addRooms(newOccupied); //ttlRooms += newOccupied
-// 	myChart.data.datasets[0].data[0] += newOccupied;
-
-// 	console.log("ttlRooms: " + ttlRooms)
-// 	console.log(occupied);
-// 	myChart.update();
-// 	updateLabels();
-// }
-
-// function removeOccupied(newOccupied)
-// {
-// 	occupied -= newOccupied;
-// 	removeRooms(newOccupied); //ttlRooms -= newOccupied
-// 	myChart.data.datasets[0].data[0] -= newOccupied;
-
-// 	console.log("ttlRooms: " + ttlRooms)
-// 	console.log(occupied);
-// 	myChart.update();
-// 	updateLabels();
-// }
-
 function getOccupied()
 {
 	return occupied;
@@ -180,42 +171,34 @@ function setOccupied(newOccupied)
 		console.log("New value cannot be greater than total rooms.");
 	}
 
-	// if (vacant - newOccupied < 0)
-	// {
-	// 	console.log("Error");
-	// }
 
 	else {
 		occupied = newOccupied;
-		//vacant -= newOccupied;
 		myChart.data.datasets[0].data[0] = occupied;
 		myChart.update();
-		// updateLabels();
+	}
+
+}
+
+// Vacant Functions
+function addVacantRooms(value)
+{
+	if ((ttlRooms + value) <= 0)
+	{
+			console.log("Error: Cannot have 0 rooms.");
+	}
+
+	else
+	{	
+			vacant += value;
+			addRooms(value); //ttlRooms += newOccupied
+			myChart.data.datasets[0].data[1] += value;
+
+			myChart.update();
+			updateLabels();
 	}
 }
 
-function addOccupiedRoom()
-{
-	occupied += 1;
-	addRooms(1); //ttlRooms += newOccupied
-	myChart.data.datasets[0].data[0] += 1;
-
-	myChart.update();
-	updateLabels();
-}
-
-function addVacantRoom()
-{
-	vacant += 1;
-	addRooms(1); //ttlRooms += newOccupied
-	myChart.data.datasets[0].data[1] += 1;
-
-	myChart.update();
-	updateLabels();
-}
-
-
-// Vacant Functions
 function makeVacant()
 {
 	if(vacant == ttlRooms)
@@ -235,30 +218,6 @@ function makeVacant()
 		updateLabels();
 	}
 }
-
-// function addVacant(newVacant)
-// {
-// 	vacant += newVacant;
-// 	addRooms(newVacant); //ttlRooms += newVacant;
-// 	myChart.data.datasets[0].data[1] += newVacant;
-
-// 	console.log(vacant);
-// 	console.log("ttlRooms: " + ttlRooms)
-// 	myChart.update();
-// 	updateLabels();
-// }
-
-// function removeVacant(newVacant)
-// {
-// 	vacant -= newVacant;
-// 	removeRooms(newVacant); //ttlRooms -= newVacant;
-// 	myChart.data.datasets[0].data[1] -= newVacant;
-
-// 	console.log(vacant);
-// 	console.log("ttlRooms: " + ttlRooms)
-// 	myChart.update();
-// 	// updateLabels();
-// }
 
 function getVacant()
 {
@@ -285,6 +244,8 @@ function setVacant(newVacant)
 
 }
 
+
+//Unused Functions
 function autoResize() 
 {
   var textarea = document.getElementById("jsonResponseField");

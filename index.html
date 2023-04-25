@@ -111,14 +111,14 @@
 
 		</div>
 
-		<div class = flexChild id = "donutChart">
+		<div class = "flexChild" id = "donutChart">
 			<div>
 				<h1 class="display-5 text-center" style = "color: #35C4EC">Main Building&nbsp;</h1>
 	  			<canvas id="myChart" height="400px" width="400px"></canvas>
 	  		</div>
 	   </div>
 
-	   <div class = flexChild id = "JSONResponseArea">
+	   <div class = "flexChild" id = "JSONResponseArea">
 	   	<div>
 	   		<h4 style = "color: #35C4EC" id="ttlVacantLabel">JSON Response Area:</h4>
 	  		 	<textarea name = "jsonResponseField", id = "jsonResponseField", oninput="autoResize()", value = "">JSON Response:</textarea>	
@@ -181,20 +181,27 @@
 		  <button class = "float-sm-left" onClick="removeVacant(1)">Remove Vacant</button>
 	  </div> -->
 
-	  <div>
-		  <button class = "float-sm-left" onClick="makeVacant()">Make Vacant</button>
-		  <button class = "float-sm-left" onClick="makeOccupied()">Make Occupied</button>
-	  </div>
+	<div class="flexContainer">
 
-		<!-- </div>
+		  	<div class="flexChild">
+			  <button class = "float-sm-left" onClick="makeVacant()">Make Vacant</button>
+			  <button class = "float-sm-left" onClick="makeOccupied()">Make Occupied</button>
+		   </div>
 
-		<br>
+			<!-- </div>
 
-		<div> -->
-	 <div>
-		  <button class = "float-sm-left" onClick="addVacantRoom()">Add Vacant Room</button>
-		  <button class = "float-sm-left" onClick="addOccupiedRoom()">Add Occupied Room</button>
-	  </div>
+			<br>
+
+			<div> -->
+
+		 	<div class = "flexChild">
+			  <button class = "float-sm-left" onClick="addVacantRooms(1)">Add Vacant Room</button>
+			  <button class = "float-sm-left" onClick="addOccupiedRooms(1)">Add Occupied Room</button>
+			  <button class = "float-sm-left" onClick="addVacantRooms(-1)">Remove Vacant Room</button>
+			  <button class = "float-sm-left" onClick="addOccupiedRooms(-1)">Remove Occupied Room</button>
+		 	</div>
+
+	</div>
  
 	  <!-- <div class = "flexContainer" id = "labelRow" style = "margin: 10px;">
 

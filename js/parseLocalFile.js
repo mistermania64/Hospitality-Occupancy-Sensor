@@ -6,26 +6,30 @@ function parseLocalFile(filename)
 
 	console.log(data);
 
+	//Stringify, log string, and print in textarea
 	const jsonString = JSON.stringify(data, null, 2); // Convert the data to a nicely formatted JSON string)
 	console.log(jsonString);
+	document.getElementById('jsonResponseField').value = "JSON Response:\n" + jsonString;
 
-	const jsonObj = JSON.parse(jsonString);
-
-	//Extract specific values 
-	var newOccupied = data.occupied;
-	var newVacant = data.vacant;
-	var newRooms = data.ttlRooms;
+	//Extract specific values from Data
+	newOccupied = data.occupied;
+	newVacant = data.vacant;
+	newRooms = data.ttlRooms;
 
 	//Update chart
 	setRooms(newRooms);
 	setOccupied(newOccupied);
 	setVacant(newVacant);
 
-
-	document.getElementById('jsonResponseField').value = "JSON Response:\n" + jsonString;
+	//Update Labels
+   updateLabels();
+   
 	})
 
-  .catch(error => console.error('Error:', error));
+  .catch(error => {
+  	console.error('Error:', error)
+  });
+
 }
 
-module.exports = parseLocalFile;
+//module.exports = parseLocalFile;
