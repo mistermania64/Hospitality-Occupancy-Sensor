@@ -11,10 +11,13 @@ function parseLocalFile(filename)
 	console.log(jsonString);
 	document.getElementById('jsonResponseField').value = "JSON Response:\n" + jsonString;
 
-	//Extract specific values from Data
-	newOccupied = data.occupied;
-	newVacant = data.vacant;
-	newRooms = data.ttlRooms;
+	// Parse the returned data into a JSON object
+	const jsonObj = JSON.parse(data);
+
+	//Extract specific values from JSON object
+	newOccupied = parseInt(data.occupied);
+	newVacant = parseInt(data.vacant);
+	newRooms = parseInt(data.ttlRooms);
 
 	//Update chart
 	setRooms(newRooms);
@@ -23,7 +26,7 @@ function parseLocalFile(filename)
 
 	//Update Labels
    updateLabels();
-   
+
 	})
 
   .catch(error => {
