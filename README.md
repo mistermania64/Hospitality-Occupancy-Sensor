@@ -165,7 +165,7 @@ After installing and accessing the Home Assistant operation system as described 
 
 2. Using the backup found in the “Home Assistant” folder in this repository, you can restore the testing Home Assistant instance. The credentials will be relayed via email for protection.
 
-![Backup Location.](images/ReadMe_Images/BackupLocations.png)
+![Backup Location.](images/ReadMe_Images/BackupLocation.png)
 
 3. The next screen will be setting up your home location. You can click on the “Detect” link to allow Home Assistant to retrieve your current location, time zone, elevation, and unit system, but these values can be manually filled as well. When you filled out the values, click on “Next”. 
 
