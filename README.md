@@ -16,13 +16,11 @@ Florida Polytechnic University
 
 Dear Luis Garcia and and rest of Corserva/EntryReady,
 
-You may find the assembly instructions on both the software and hardware sides of the occupancy sensor project you have sponsored below. We may add more sections and information about what this document contains as we proceed further into writing.
+You may find the assembly instructions on both the software and hardware sides of the occupancy sensor project you have sponsored below. This document is similar to the PDF documentation sent with this project. This README, as well as the PDF, detail the steps used to replicate the hardware and software assembly for testing the project.
 
-This README does not contain the software engineering notes as I do not have the knowledge to add highlighting and comments to this document if such an ability exists. I'll leave my notes and highlighting to the Google Docs documentation, which I am also editing as well.
+This README, as well as the PDF documentation, does not cover the website functionality nor server implementation. The website was later listed as a secondary requirement in the project’s final weeks and server implementation was never included in our project scope. Do not attempt to contact us to work on this project further as we are no longer under an educational obligation to work for you anymore.
 
-We’ll also include a disclaimer about how Corserva plans to use the sensors with a server instead of a Raspberry Pi which is what we have used for this project. We’ll add some heartfelt letter about how it was an honor to work for you on our Senior Design project here, but that’ll be later.
-
-This document is a work in progress, so if you have any concerns to address, highlighting and commenting on this document will be much faster than by email or by addressing it in the weekly meeting.
+On behalf of the rest of the team, thank you for sponsoring this project that we can claim as our senior project. We completed the project to the best of our abilities and we hope that you may use our project to further benefit the company in the future, whether that will be the documentation, sensor hardware, the website, or other parts of the project that we spent since last September working on. We wish you all the best of luck with your future projects.
 
 Yours Truly,
 
@@ -53,8 +51,6 @@ Jack Edwards
 +++ 2.2.1 - ESPHome Environment
 
 +++ 2.2.2 - Installing MMWave Code
-
-3 - Website Connection Setup
 
 
 ## 1. Physical Assembly
@@ -95,11 +91,16 @@ The D1, D2, G, and 5V pins use soldered header and pin connections while the D0 
 This section goes through how to assemble the sensor step by step.
 
 1. Solder the header connectors and the single wire to the D1 Mini as per the “Wiring” section.
-2. Cut a half inch of insulation from the loose wire end.
-3. Solder the pins on the TX, RX, G, and V pins on the sensor.
-4. Solder the loose wire end to the sensor’s IO2 pin.
-5. Plug the sensor into the D1 Mini while ensuring the sensor’s V pin is aligned to the D1 Mini’s 5V pin.
+a. Cut a half inch of insulation from the loose wire end.
+![Loose wire from the D1 Mini.](images/ReadMe_Images/Hardware1.png)
 
+2. Solder the pins on the TX, RX, G, and V pins on the sensor.
+
+3. Solder the loose wire end to the sensor’s IO2 pin.
+![Connected sensor to the D1 Mini.](images/ReadMe_Images/Hardware2.png)
+
+4. Plug the sensor into the D1 Mini while ensuring the sensor’s V pin is aligned to the D1 Mini’s 5V pin.
+![Connected and aligned sensor to the D1 Mini.](images/ReadMe_Images/Hardware3.png)
 # 2. Software Assembly
 
 This section contains the instructions for how to set up the software components of the project. This includes how to set up Home Assistant on a Raspberry Pi, ESPHome, the mmWave code, and configuring Home Assistant parameters.
@@ -180,7 +181,3 @@ Example: Room 201 Sensor
 
 4. Do not change the variables “uart_tx_pin”, “uart_rx_pin”, and “gpio_pin” unless you are using different pin connections from Section 1.
 5. Deploy the MMWave code from your ESPHome environment.
-
-# 3. Website Connection Setup
-
-We will write this section when the MQTT Broker is operating successfully.
