@@ -18,7 +18,7 @@ Dear Luis Garcia and and rest of Corserva/EntryReady,
 
 You may find the assembly instructions on both the software and hardware sides of the occupancy sensor project you have sponsored below. This document is similar to the PDF documentation sent with this project. This README, as well as the PDF, detail the steps used to replicate the hardware and software assembly for testing the project.
 
-This README, as well as the PDF documentation, does not cover the website functionality nor server implementation. The website was later listed as a secondary requirement in the project’s final weeks and server implementation was never included in our project scope. Do not attempt to contact us to work on this project further as we are no longer under an educational obligation to work for you anymore.
+This README, as well as the PDF documentation, does not cover the website functionality nor server implementation. The website was later listed as a secondary requirement in the project’s final weeks and server implementation was never included in our project scope. Do not attempt to contact us to work on this project further as we are no longer under an educational obligation to work for you anymore. If you need further assistance for this project, ask Luis Garcia, who was our sponsor contact for this project.
 
 On behalf of the rest of the team, thank you for sponsoring this project that we can claim as our senior project. We completed the project to the best of our abilities and we hope that you may use our project to further benefit the company in the future, whether that will be the documentation, sensor hardware, the website, or other parts of the project that we spent since last September working on. We wish you all the best of luck with your future projects.
 
@@ -128,23 +128,36 @@ These are the instructions used to install the Home Assistant operating system o
 2. Download and start Balena Etcher (Link: www.balena.io/etcher). Enable administrator privileges if requested.
 
 3. From the resulting window, a three-step diagram will appear. From the leftmost icon, click on the “Flash from URL” button.
+![Etcher Stage 1 Screen.](images/ReadMe_Images/Etcher1.png)
 
-4. Copy and paste the following link for the image URL, then click on the “OK” button: https://github.com/home-assistant/operating-system/releases/download/9.5/haos_rpi4-64-9.5.img.xz
-5. Wait for Balena to download the image. When it has done so, the middle icon will light up. Click on the “Select Target” button from the center icon.
-6. Select the SD card you have inserted earlier, then click on the “Select” button.
-7. The rightmost icon should brighten now. Click on the “Flash!” button to write the Raspberry Pi image to the SD card.
-8. When you see a confirmation screen, eject your SD card from your computer and insert it into your Raspberry Pi.
+4. Copy and paste the following link for the image URL, then click on the “OK” button: https://github.com/home-assistant/operating-system/releases/download/9.5/haos_rpi4-64-9.5.img.xz ![Etcher Image Screen.](images/ReadMe_Images/Etcher2.png)
+
+5. Wait for Balena to download the image. When it has done so, the middle icon will light up. Click on the “Select Target” button from the center icon. ![Etcher Stage 2 Screen.](images/ReadMe_Images/Etcher3.png)
+
+6. Select the SD card you have inserted earlier, then click on the “Select” button. ![Etcher Target Screen.](images/ReadMe_Images/Etcher4.png)
+
+7. The rightmost icon should brighten now. Click on the “Flash!” button to write the Raspberry Pi image to the SD card. ![Etcher Stage 3 Screen.](images/ReadMe_Images/Etcher5.png)
+
+8. When you see a confirmation screen, eject your SD card from your computer and insert it into your Raspberry Pi. ![Etcher Confirmation Screen.](images/ReadMe_Images/Etcher6.png)
+
 9. Plug in the ethernet cable from the network to the Pi and then power the Pi.
+
 10. Wait for a few minutes before checking to see if Home Assistant is accessible. After waiting, go to a web browser and paste homeassistant.local:8123 into the webpage bar. If you reach a web page, the installation was successful.
 If you have a stricter network configuration, enter http://X.X.X.X:8123 into the webpage bar instead, replacing “X.X.X.X” with the Raspberry Pi’s IP address.
 
 ### 2.1.3 - Home Assistant Onboarding
 After installing and accessing the Home Assistant operation system as described in 2.1.2, these are the instructions to start configuring Home Assistant.
 
-1. The first screen presented will be an account creation page. This will be the account used to access Home Assistant. Enter your name, username, and password you will use for Home Assistant, then click on the “Create Account” button.
-2. The next screen will be setting up your home location. You can click on the “Detect” link to allow Home Assistant to retrieve your current location, time zone, elevation, and unit system, but these values can be manually filled as well. When you filled out the values, click on “Next”.
-3. You will now be presented to the devices screen. You can set up devices that Home Assistant detects (you are looking for an “ESPHome” device), but if you don’t see your device in the screen, it can be connected later. Click on the “Finish” link to finish initial configuration.
-4. You will now be presented to the Home Assistant dashboard. To connect any devices not connected initially, go to “Settings” -> “Devices & Services” from the left column. You may find your device in the “Discovered” section, but if not, click on the “Add Integration” button and find your device there.
+1. The first screen presented will be an account creation page. This will be the account used to access Home Assistant. Enter your name, username, and password you will use for Home Assistant, then click on the “Create Account” button. ![Assistant Account Creation Screen.](images/ReadMe_Images/Assistant1.png)
+
+2. Using the backup found in the “Home Assistant” folder in this repository, you can restore the testing Home Assistant instance. The credentials will be relayed via email for protection. ![Backup Location.](images/ReadMe_Images/BackupLocations.png)
+
+3. The next screen will be setting up your home location. You can click on the “Detect” link to allow Home Assistant to retrieve your current location, time zone, elevation, and unit system, but these values can be manually filled as well. When you filled out the values, click on “Next”. ![Assistant Location Screen.](images/ReadMe_Images/Assistant2.png)
+
+4. You will now be presented to the devices screen. You can set up devices that Home Assistant detects (you are looking for an “ESPHome” device), but if you don’t see your device in the screen, it can be connected later. Click on the “Finish” link to finish initial configuration. ![Assistant Devices Screen.](images/ReadMe_Images/Assistant3.png)
+
+5. You will now be presented to the Home Assistant dashboard. To connect any devices not connected initially, go to “Settings” -> “Devices & Services” from the left column. You may find your device in the “Discovered” section, but if not, click on the “Add Integration” button and find your device there. ![Assistant User Deshboard.](images/ReadMe_Images/Assistant4.png)
+![Assistant Settings Screen.](images/ReadMe_Images/Assistant5.png)
 
 
 ## 2.2 - ESPHome & MMWave Code
@@ -155,18 +168,20 @@ The following steps were performed to start the ESPHome environment:
 1. Go to the following link and enter the webpage used in 2.1.2, step 10, then click on “Save”: https://my.home-assistant.io/redirect/supervisor_addon/?addon=5c53de3b_esphome&repository_url=https%3A%2F%2Fgithub.com%2Fesphome%2Fhome-assistant-addon
 By default, homeassistant.local:8123 is filled, but use http://X.X.X.X:8123 instead if that is what was used.
 
-2. Wait for ESPHome to be installed (it will take a while), then click on “Start” then “Open Web UI”. If you encounter a “502: Bad Gateway” error, then ESPHome is still starting up, so refresh the page later.
+2. Wait for ESPHome to be installed (it will take a while), then click on “Start” then “Open Web UI”. If you encounter a “502: Bad Gateway” error, then ESPHome is still starting up, so refresh the page later. ![ESPHome Installation Screen.](images/ReadMe_Images/Home1.png)
 
 3. Proceed through the installation wizard to connect the ESP32 with Home Assistant.
 
-The installation will require an ethernet cable connected from the ESP32 to the computer for the initial connection. Further connections can be made using WiFi.
+The installation will require an ethernet cable connected from the ESP32 to the computer for the initial connection. Further connections can be made using WiFi. ![ESPHome Welcome Screen.](images/ReadMe_Images/Home2.png)
 
 ### 2.2.2 - Installing MMWave Code
 
 The following steps detail how to install the MMWave code after configuring an ESPHome environment.
 
-1. Clone the following repository from this link to your build environment: https://github.com/igiannakas/mmwave-d1mini
-2. From the repository, download the code zip and unzip the file in your ESPHome build directory.
+1. Copy the “Home Assistant” folder in this repository to your build environment.
+
+2. Copy the files from the Home Assistant Folder into your ESPHome build Directory. Specifically, the “packages” and “header” folders should be in the ESPHome directory because “sensor.yaml” depends on it.
+
 3. Open the file named “sensor.yaml” and edit the values to your setup:
 
 “device_name”: The sensor’s device name that must be in all lowercase with spaces represented by hyphens.
@@ -180,4 +195,5 @@ Example: Room 201 Sensor
 “wifi_password”: The password from the previous SSID.
 
 4. Do not change the variables “uart_tx_pin”, “uart_rx_pin”, and “gpio_pin” unless you are using different pin connections from Section 1.
+
 5. Deploy the MMWave code from your ESPHome environment.
